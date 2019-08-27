@@ -98,6 +98,7 @@
                     }
                 }
                 if (binCount != 0) {
+                //当一个链表的长度大于等于8，则进行树化或者扩容
                     if (binCount >= TREEIFY_THRESHOLD)
                         treeifyBin(tab, i);
                     if (oldVal != null)
@@ -109,6 +110,69 @@
         addCount(1L, binCount);
         return null;
     }
+    
+    
+    //计算hash值的方法
       static final int spread(int h) {
         return (h ^ (h >>> 16)) & HASH_BITS;
+    }
+    
+    
+    //表的初始化
+     private final Node<K,V>[] initTable() {
+        Node<K,V>[] tab; int sc;
+        while ((tab = table) == null || tab.length == 0) {
+        //sizeCtl初始值为0，当小于0的时候表示在别的线程在初始化表或扩展表,则让出执行权
+            if ((sc = sizeCtl) < 0)
+                Thread.yield(); // lost initialization race; just spin
+            //SIZECTL：表示当前对象的内存偏移量，sc表示期望值，-1表示要替换的值，设定为-1表示要初始化表了
+            else if (U.compareAndSwapInt(this, SIZECTL, sc, -1)) {
+                try {
+                    if ((tab = table) == null || tab.length == 0) {
+                      //指定了大小的时候就创建指定大小的Node数组，否则创建指定大小(16)的Node数组
+                        int n = (sc > 0) ? sc : DEFAULT_CAPACITY;
+                        @SuppressWarnings("unchecked")
+                        Node<K,V>[] nt = (Node<K,V>[])new Node<?,?>[n];
+                        table = tab = nt;
+                        sc = n - (n >>> 2);
+                    }
+                } finally {
+                  //初始化后sizeCtl的长度为表的3/4
+                    sizeCtl = sc;
+                }
+                break;
+            }
+        }
+        return tab;
+    }
+    
+    
+    //树化或扩容
+     private final void treeifyBin(Node<K,V>[] tab, int index) {
+        Node<K,V> b; int n, sc;
+        if (tab != null) {
+        //如果表的长度小于64则只进行表的扩容
+            if ((n = tab.length) < MIN_TREEIFY_CAPACITY)
+                tryPresize(n << 1);
+            //否则进行加锁树化
+            else if ((b = tabAt(tab, index)) != null && b.hash >= 0) {
+                synchronized (b) {
+                    if (tabAt(tab, index) == b) {
+                        TreeNode<K,V> hd = null, tl = null;
+                        for (Node<K,V> e = b; e != null; e = e.next) {
+                            TreeNode<K,V> p =
+                                new TreeNode<K,V>(e.hash, e.key, e.val,
+                                                  null, null);
+                            if ((p.prev = tl) == null)
+                                hd = p;
+                            else
+                                tl.next = p;
+                            tl = p;
+                        }
+                    //把TreeNode的链表放入容器TreeBin中
+                        setTabAt(tab, index, new TreeBin<K,V>(hd));
+                    }
+                }
+            }
+        }
     }
