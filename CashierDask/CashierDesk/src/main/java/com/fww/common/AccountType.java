@@ -9,7 +9,7 @@ public enum  AccountType {
         this.flag = flag;
         this.type = type;
     }
-    public AccountType getAccountType(int flag)
+    public static AccountType getAccountType(int flag)
     {
         for (AccountType accountType:values()) {
             if(accountType.flag == flag){

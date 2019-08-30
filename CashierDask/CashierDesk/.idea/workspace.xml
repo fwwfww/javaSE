@@ -12,6 +12,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -31,6 +32,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -48,6 +50,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="EntrancePage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fww.utils.command.EntrancePage" />
+      <module name="CashierDesk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fww.utils.command.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EntrancePage" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -59,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1567078622992</updated>
       <workItem from="1567078626113" duration="604000" />
-      <workItem from="1567079250169" duration="9845000" />
+      <workItem from="1567079250169" duration="30457000" />
     </task>
     <servers />
   </component>

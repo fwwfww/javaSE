@@ -1,18 +1,19 @@
-package com.fww.utils.command.account;
+package com.fww.utils.command.goods;
 
 import com.fww.utils.annotation.AdminCommand;
 import com.fww.utils.annotation.CommandMeta;
+import com.fww.utils.annotation.CustomerCommand;
 import com.fww.utils.command.AbstractCommand;
 import com.fww.utils.command.Subject;
 
 @AdminCommand
+@CustomerCommand
 @CommandMeta(
-        comm = "QTZH",
-        name = "启停账户",
-        group = "账户信息"
+        comm = "LLSP",
+        name = "浏览商品",
+        group = "商品信息"
 )
-public class AccountStatusResetCommand extends AbstractCommand {
-
+public class GoodsBrowseCommand extends AbstractCommand {
     @Override
     public void execute(Subject subject) {
 

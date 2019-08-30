@@ -1,19 +1,17 @@
-package com.fww.utils.command.account;
+package com.fww.utils.command.order;
 
-import com.fww.utils.annotation.AdminCommand;
 import com.fww.utils.annotation.CommandMeta;
 import com.fww.utils.annotation.CustomerCommand;
 import com.fww.utils.command.AbstractCommand;
 import com.fww.utils.command.Subject;
 
-@AdminCommand
 @CustomerCommand
 @CommandMeta(
-        comm="XGMM",
-        name = "修改密码",
-        group = "账户信息"
+        comm = "ZFDD",
+        name = "支付订单",
+        group = "订单信息"
 )
-public class AccountPasswordResetCommand extends AbstractCommand {
+public class OrderPaidCommand extends AbstractCommand {
     @Override
     public void execute(Subject subject) {
 

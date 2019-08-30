@@ -13,6 +13,7 @@ public class Account {
     private Integer id;
     private String name;
     private String realName;
+    private String password;
     private AccountStatus status;
     private AccountType type;
 }
