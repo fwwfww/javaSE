@@ -1,9 +1,14 @@
 package com.fww.common;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+
 public enum  AccountType {
     ADMIN(1,"管理员"),CUSTOMER(2,"普通用户");
-    private int flag;
-    private String type;
+    public int flag;
+    public String type;
 
     AccountType(int flag, String type) {
         this.flag = flag;

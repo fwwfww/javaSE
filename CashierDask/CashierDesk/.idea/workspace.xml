@@ -32,11 +32,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -81,7 +82,9 @@
       <option name="presentableId" value="Default" />
       <updated>1567078622992</updated>
       <workItem from="1567078626113" duration="604000" />
-      <workItem from="1567079250169" duration="30457000" />
+      <workItem from="1567079250169" duration="32491000" />
+      <workItem from="1567230349235" duration="2556000" />
+      <workItem from="1567236748055" duration="15715000" />
     </task>
     <servers />
   </component>
@@ -105,5 +108,16 @@
     <ignored-roots>
       <path value="D:/" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/fww/dao/AccountDao.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

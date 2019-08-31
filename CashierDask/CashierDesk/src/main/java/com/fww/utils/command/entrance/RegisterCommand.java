@@ -6,7 +6,8 @@ import com.fww.utils.annotation.CommandMeta;
 import com.fww.utils.annotation.EntranceCommand;
 import com.fww.utils.command.AbstractCommand;
 import com.fww.utils.command.Subject;
-import sun.security.mscapi.RSASignature;
+import org.apache.commons.codec.digest.DigestUtils;
+
 
 @EntranceCommand
 @CommandMeta(
@@ -32,10 +33,15 @@ public class RegisterCommand extends AbstractCommand {
                         Account account = new Account();
                         account.setName(name);
                         account.setRealName(realName);
-                        account.setPassword();
+                        account.setPassword(DigestUtils.md5Hex(password));
                         account.setType(accountType1);
 
-                        boolean effect = this
+                        boolean effect = accountService.register(account);
+                        if(effect){
+                                outPut("注册成功！");
+                        }else{
+                                outPut("注册失败！");
+                        }
                 }else{
                         outPut("您两次输入密码不一致，注册失败！");
                         return;

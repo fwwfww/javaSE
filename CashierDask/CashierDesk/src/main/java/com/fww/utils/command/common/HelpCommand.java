@@ -41,9 +41,11 @@ public class HelpCommand extends AbstractCommand {
     }
 
     private void customerHelp() {
+        printf("欢迎",Commands.CUSROMERCOMMAND.values());
     }
 
     private void adminHelp() {
+        printf("欢迎",Commands.ANDMINCOMMAND.values());
     }
 
     private void entranceHelp() {

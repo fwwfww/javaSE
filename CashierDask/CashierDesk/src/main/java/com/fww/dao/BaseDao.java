@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class BaseDao {
     private static volatile DataSource dataSource;
@@ -33,7 +34,7 @@ public class BaseDao {
       return connection;
     }
 
-    protected void closeResource(Connection connection,PreparedStatement ps,ResultSet rs) {
+    protected void closeResource(Connection connection, Statement ps, ResultSet rs) {
         if(rs != null){
             try {
                 rs.close();

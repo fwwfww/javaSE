@@ -14,7 +14,7 @@ public class EntrancePage extends AbstractCommand {
        Commands.getHelpcommand().execute(subject);
         while(true){
             outPut(">>>");
-            String str = scanner.next();
+            String str = scanner.nextLine();
             String commandCode = str.trim().toUpperCase();
             Account account = subject.getAccount();
             if(account == null){
@@ -26,6 +26,7 @@ public class EntrancePage extends AbstractCommand {
                         break;
                     case ADMIN:
                         Commands.getAdminCommand(commandCode).execute(subject);
+                        break;
                 }
             }
         }

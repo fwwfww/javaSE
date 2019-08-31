@@ -23,9 +23,9 @@ import java.util.*;
 
 public class Commands {
     //对命令进行分类
-    public static final Map CUSROMERCOMMAND = new HashMap();
-    public static final Map ANDMINCOMMAND =  new HashMap();
-    public static final Map ENTRANCECOMMAND = new HashMap();
+    public static final Map<String,Command> CUSROMERCOMMAND = new HashMap();
+    public static final Map<String,Command>  ANDMINCOMMAND =  new HashMap();
+    public static final Map<String,Command>  ENTRANCECOMMAND = new HashMap();
     public static final Command HELPCOMMAND;
     public static final Set<Command> COMMANDS = new HashSet<>();
     static {
@@ -81,8 +81,8 @@ public class Commands {
         return getCommand(commandCode,CUSROMERCOMMAND);
     }
 
-    private static Command getCommand(String commandCode, Map<String,Command> entrancecommand) {
-        return entrancecommand.getOrDefault(commandCode,HELPCOMMAND);
+    private static Command getCommand(String commandCode, Map<String,Command> command) {
+        return   command.getOrDefault(commandCode,HELPCOMMAND);
     }
 
 
