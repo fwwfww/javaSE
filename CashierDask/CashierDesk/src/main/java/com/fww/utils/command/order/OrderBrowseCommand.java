@@ -1,6 +1,7 @@
 package com.fww.utils.command.order;
 
 import com.fww.entity.Items;
+import com.fww.entity.Order;
 import com.fww.utils.annotation.CommandMeta;
 import com.fww.utils.annotation.CustomerCommand;
 import com.fww.utils.command.AbstractCommand;
@@ -20,15 +21,16 @@ public class OrderBrowseCommand extends AbstractCommand {
     @Override
     public void execute(Subject subject) {
        outPut("我的订单");
-        List<Items> itemsList = new ArrayList<>();
-        itemsList = this.orderService.quaryAllItems();
-        if(itemsList == null){
+        List<Order> orderList = new ArrayList<>();
+        orderList = this.orderService.quaryAllOrder(subject.getAccount().getId());
+        if(orderList.isEmpty()){
             outPut("您还没有购买记录！");
             return;
         }
-        for (Items items:itemsList){
-
-
+        for (Order order:orderList){
+          outPut("-------------开始分割线-------------");
+          outPut(order);
+          outPut("-------------结束分割线-------------");
         }
     }
 }

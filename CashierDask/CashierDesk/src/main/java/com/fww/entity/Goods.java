@@ -15,6 +15,7 @@ public class Goods {
     private Integer goodsStock;
     private Double price;
     private Integer discount;
+    private Integer buyNumber;
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

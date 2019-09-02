@@ -39,6 +39,16 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Javacode\CashierDesk\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="yl" />
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -84,7 +94,8 @@
       <workItem from="1567078626113" duration="604000" />
       <workItem from="1567079250169" duration="32491000" />
       <workItem from="1567230349235" duration="2556000" />
-      <workItem from="1567236748055" duration="15715000" />
+      <workItem from="1567236748055" duration="36161000" />
+      <workItem from="1567410599283" duration="6789000" />
     </task>
     <servers />
   </component>

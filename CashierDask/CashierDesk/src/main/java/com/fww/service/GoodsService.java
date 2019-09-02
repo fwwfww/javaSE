@@ -29,4 +29,8 @@ public class GoodsService {
     public boolean goodsUpData(Goods goods1) {
         return this.goodsDao.goodsUpData(goods1);
     }
+
+    public boolean updateAfterPay(Goods g, Integer buyNumber) {
+        return goodsDao.updateAfterPay(g,buyNumber);
+    }
 }

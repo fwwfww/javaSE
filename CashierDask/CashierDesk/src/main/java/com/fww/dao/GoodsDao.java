@@ -143,4 +143,25 @@ public class GoodsDao extends BaseDao {
         return effect;
 
     }
-}
+
+    public boolean updateAfterPay(Goods g, Integer buyNumber) {
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        boolean effect = false;
+        try {
+            connection = this.getConnection(true);
+            String sql = "update goods set stock = ? where id = ?";
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, g.getGoodsStock() - buyNumber);
+            preparedStatement.setInt(2, g.getId());
+            if (preparedStatement.executeUpdate() == 1) {
+                effect = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return effect;
+    }
+    }
