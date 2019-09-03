@@ -51,8 +51,8 @@ public class OrderPaidCommand extends AbstractCommand {
             items.setDiscount(g.getDiscount());
             items.setGoodsNumber(g.getBuyNumber());
             order.itemsList.add(items);
-            totalMoney += items.getGoodsPrice()*items.getGoodsNumber();
-            actuallyMoney += items.getGoodsPrice()*items.getGoodsNumber()*items.getDiscount()/100;
+            totalMoney += items.getGoodsPrice()/100*items.getGoodsNumber();
+            actuallyMoney += items.getGoodsPrice()/100*items.getGoodsNumber()*items.getDiscount()/100;
         }
         order.setTotalMoney(totalMoney);
         order.setActualMoney(actuallyMoney);

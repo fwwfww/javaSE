@@ -48,7 +48,7 @@ public class OrderDao extends BaseDao {
 
     private void getOrder(Order order, ResultSet rs) {
         try {
-            order.setId(rs.getString("id"));
+            order.setId(rs.getString("order_id"));
             order.setAccountId(rs.getInt("account_id"));
             order.setAccountName(rs.getString("account_name"));
             order.setCreatTime(rs.getTimestamp("create_time").toLocalDateTime());
@@ -67,15 +67,15 @@ public class OrderDao extends BaseDao {
     public Items getItems(ResultSet resultSet) {
         Items items = new Items();
         try {
-            items.setId(resultSet.getInt("id"));
+           // items.setId(resultSet.getInt("id"));
             items.setOrderId(resultSet.getString("order_id"));
             items.setGoodsId(resultSet.getInt("goods_id"));
             items.setGoodsName(resultSet.getString("goods_name"));
             items.setGoodsIntroduce(resultSet.getString("goods_introduce"));
-            items.setGoodsNumber(resultSet.getInt("stock"));
-            items.setGoodsUnit(resultSet.getString("unit"));
-            items.setGoodsPrice(resultSet.getDouble("price"));
-            items.setDiscount(resultSet.getInt("discount"));
+            items.setGoodsNumber(resultSet.getInt("goods_num"));
+            items.setGoodsUnit(resultSet.getString("goods_unit"));
+            items.setGoodsPrice(resultSet.getDouble("goods_price"));
+            items.setDiscount(resultSet.getInt("goods_discount"));
         } catch (SQLException e) {
             e.printStackTrace();
         }

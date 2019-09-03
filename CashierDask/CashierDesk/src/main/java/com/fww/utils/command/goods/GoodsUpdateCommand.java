@@ -24,6 +24,7 @@ public class GoodsUpdateCommand extends AbstractCommand {
             return;
         }
         outPut("商品信息如下：");
+        outPut(goods);
         outPut("确认要更新吗？y/n");
         String ret = scanner.next();
         if ("YES".equalsIgnoreCase(ret) || "Y".equalsIgnoreCase(ret)) {
@@ -40,6 +41,7 @@ public class GoodsUpdateCommand extends AbstractCommand {
             outPut("请输入商品折扣：75表示75折");
             int discount = scanner.nextInt();
             Goods goods1 = new Goods();
+            goods1.setId(id);
             goods1.setGoodsName(goodsName);
             goods1.setGoodsIntroduce(goodsIntroduce);
             goods1.setGoodsUnit(goodsUnit);

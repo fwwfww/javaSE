@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum  OrderStatus {
-    UNPID(1,"未支付"),PAID(1,"已支付");
+    UNPID(1,"未支付"),PAID(2,"已支付");
     public int flag;
     public String status;
 

@@ -131,6 +131,7 @@ public class GoodsDao extends BaseDao {
             ps.setString(4, goods1.getGoodsUnit());
             ps.setDouble(5, goods1.getPrice());
             ps.setInt(6, goods1.getDiscount());
+            ps.setInt(7,goods1.getId());
             int ret = ps.executeUpdate();
             if (ret > 0) {
                 effect = true;
