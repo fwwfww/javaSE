@@ -7,6 +7,7 @@ import com.fww.utils.annotation.EntranceCommand;
 import com.fww.utils.command.account.AccountBrowseCommand;
 import com.fww.utils.command.account.AccountPasswordResetCommand;
 import com.fww.utils.command.account.AccountStatusResetCommand;
+import com.fww.utils.command.account.CustomerBrowse;
 import com.fww.utils.command.common.AboutSystemCommand;
 import com.fww.utils.command.common.HelpCommand;
 import com.fww.utils.command.common.QuitCommand;
@@ -35,6 +36,7 @@ public class Commands {
                 new AccountStatusResetCommand(),
                 new AccountStatusResetCommand(),
                 new AboutSystemCommand(),
+                new CustomerBrowse(),
                 HELPCOMMAND = new HelpCommand(),
                 new QuitCommand(),
                 new LoginCommand(),
